@@ -1,6 +1,7 @@
 import express from "express";
 import "dotenv/config";
 
+const port = process.env.PORT || 8080;
 const app = express();
 
 const notes = [
@@ -16,11 +17,9 @@ const notes = [
 
 app.use(express.static("public"));
 
-app.get("/api/notes", (req, res) => {
+app.get("/api/notes", (_req, res) => {
   res.json(notes);
 });
-
-const port = process.env.PORT || 8080;
 
 app.listen(port, () => {
   console.log(`Listening on http://localhost:${port}`);
