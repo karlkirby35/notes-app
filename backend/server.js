@@ -10,6 +10,10 @@ const notes = [
   { id: 4, text: "Read a book" },
 ];
 
+//app.get("/", (req, res) => {
+//  res.send("Hello from Express!");
+//});
+
 app.use(express.static("public"));
 
 app.get("/api/notes", (req, res) => {
@@ -18,6 +22,10 @@ app.get("/api/notes", (req, res) => {
 
 const port = process.env.PORT || 8080;
 
-app.listen(port, "0.0.0.0", () => {
-  console.log(`Listening on port ${port}`);
+app.listen(port, () => {
+  console.log(`Listening on http://localhost:${port}`);
 });
+
+//app.listen(8000, () => {
+  //console.log("Listening on http://localhost:8000");
+//});
