@@ -9,6 +9,10 @@ function App() {
       .then((data) => setNotes(data));
   }, []);
 
+  useEffect(load, []);
+
+const count = notes.length;
+
   return (
     <div>
       <h1>My notes</h1>
